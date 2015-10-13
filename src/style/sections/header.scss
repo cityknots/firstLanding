@@ -4,15 +4,13 @@
 |  ||___/~~\|__/|___|  \ 
 */
 header{
-
 }
 
 .headerContainer {
-	width: 100%;
-	text-align: center;
-	position: absolute;
 	padding: 0;
 
+
+	/*Animation stuff*/
 	img, h1, h4 {
     position:absolute;
     top:0;
@@ -46,6 +44,10 @@ header{
 
 	#f4, #t4 {
     -webkit-animation-delay: -6s;
+	}
+
+	#t3 {
+		color: #f2f2f2;
 	}
 
 	img {
