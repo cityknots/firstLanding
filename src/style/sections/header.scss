@@ -8,58 +8,98 @@ header{
 
 .headerContainer {
 	padding: 0;
+	height: 1400px;
 
-
-	/*Animation stuff*/
-	img, h1, h4 {
-    position:absolute;
-    top:0;
-    -webkit-animation-name: fade;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 18s;
-    animation-name: fade;
-    animation-iteration-count: infinite;
-    animation-duration: 18s;
+	@media #{$tablet} {
+		height: 800px;
 	}
 
-	@-webkit-keyframes fade {
-    0% {opacity: 0;}
-    20% {opacity: 1;}
-    33% {opacity: 1;}
-    53% {opacity: 0;}
-    100% {opacity: 0;}
+	@media #{$mobile} {
+		height: 400px;
 	}
 
-	@keyframes fade {
-    0% {opacity: 0;}
-    20% {opacity: 1;}
-    33% {opacity: 1;}
-    53% {opacity: 0;}
-    100% {opacity: 0;}
+	.image-fix{
+	    top:0;
+		background-color: #222;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		@include header-animation();
+
+		&.img4{
+			background: url('/images/landing_bg_image4.png') no-repeat center center;		
+		}
+
+		&.img3{
+			background: url('/images/landing_bg_image3.png') no-repeat center center;
+			/*Animation*/
+			-webkit-animation-delay: -12s;
+
+			h1{
+				color: #f2f2f2;
+			}
+
+		}	
+
+		&.img2{
+			background: url('/images/landing_bg_image2.png') no-repeat center center;
+			/*Animation*/
+			-webkit-animation-delay: -6s;
+		}
 	}
 
-	#f3, #t3 {
-    -webkit-animation-delay: -12s;
+	.image-fix:after{
+		content: "";
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.2);
 	}
 
-	#f4, #t4 {
-    -webkit-animation-delay: -6s;
-	}
-
-	#t3 {
-		color: #f2f2f2;
-	}
-
-	img {
-	width: 100%;
-	margin: auto;
-	}
 
 	h1{
 	font-family: $source-font;
 	font-weight: 300;
-	z-index: 100;
+	z-index: 900;
+
+	@include vertical-align();
 	}
+
+	h1:before {
+	background: #f2f2f2;
+	content: "";
+	display: block;
+	height: 2px;
+	position: absolute;
+	top: 110%;
+	width: 60%;
+	}
+
+	h1:before {
+	left: 20%;
+	}
+
+	h1:after {
+	background: #f2f2f2;
+	content: "";
+	display: block;
+	height: 2px;
+	position: absolute;
+	top: -10%;
+	width: 60%;
+	}
+
+	h1:after {
+	left: 20%;
+	}
+
+
 
 	h4{
 	font-family: $source-font;

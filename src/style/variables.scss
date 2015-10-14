@@ -2,10 +2,51 @@
 
 // Colors
 // $ uses-color: ######
-$heading: #222222;
+$heading: #f2f2f2;
 
 // Sizing 
 // $ padding-normal: #px
 
 // Font variables
 $source-font: 'Source Sans Pro', sans-serif;
+
+
+
+/*Vertical centering*/
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin header-animation() {
+	-webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 18s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 18s;
+}
+
+
+@-webkit-keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+
+$mobile: "only screen and (max-width: 768px)";
+$tablet: "only screen and (max-width: 1024px)";
